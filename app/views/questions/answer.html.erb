@@ -3,7 +3,13 @@
   <p><em>-You</em></p>
 </div>
 <div id="answer">
-  <p><%= @answer %></p>
+  <% if @user_ask == 'I am going to work' || @user_ask == 'i am going to work'%>
+  <p><%=  @answer = 'Great!' %></p>
+  <% elsif @user_ask[-1] == '?' %>  
+  <p><%= @answer = 'Silly question, get dressed and go to work!' %></p>  
+  <% else %>   
+  <p><%= @answer = "I don't care, get dressed and go to work!" %></p>  
+  <% end %>   
   <p><em>-Your coach</em></p>
 </div>
 
